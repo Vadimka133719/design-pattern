@@ -6,11 +6,19 @@ using System.Threading.Tasks;
 
 namespace MyLibrary
 {
-    public class RedheadDuck : Duck
+    public class RedHeadDuck : Duck, IFyable, IQuackable
     {
         public override string Display()
         {
-            return "Display" + " " + this.GetType();
+            return "Display" + this.GetType();
+        }
+        public string fly()
+        {
+            return "Fly" + this.GetType();
+        }
+        public string quack()
+        {
+            return "Quack" + this.GetType();
         }
     }
 }
