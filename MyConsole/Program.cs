@@ -7,7 +7,7 @@ using MyLibrary;
 
 namespace MyConsole
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
@@ -18,19 +18,14 @@ namespace MyConsole
                 new RubberDuck(),
                 new DecoyDuck()
             };
+
             foreach (Duck duck in ducks)
             {
                 Console.WriteLine(duck.Swim());
                 Console.WriteLine(duck.Display());
-                if (duck is IFyable)
-                {
-                    Console.WriteLine((duck as IFyable).fly());
-                }
-                if (duck is IQuackable)
-                {
-                    Console.WriteLine((duck as IQuackable).quack());
-                }
+                Console.WriteLine();
             }
+
             Console.ReadKey();
         }
     }
