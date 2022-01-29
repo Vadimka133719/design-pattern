@@ -1,26 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MyLibrary
+﻿namespace MyLibrary
 {
     public abstract class Duck
     {
         protected IQuackBehavior quackBehavior;
         protected IFlyBehavior flyBehavior;
-        public void setFlyBehavior(IFlyBehavior fb)
-        {
-            flyBehavior = fb;
-        }
         public string Display()
         {
             return "Display" + this.GetType() + " " + this.flyBehavior.fly() + " " + this.quackBehavior.quack();
-        }
-        public void setQuackBehavior(IQuackBehavior qb)
-        {
-            quackBehavior = qb;
         }
         public string Swim()
         {
@@ -35,6 +21,20 @@ namespace MyLibrary
         {
             return quackBehavior.quack();
         }
+        public IFlyBehavior FFlyBehavior
+        {
+            set
+            {
+                flyBehavior = value;
+            }
+        }
 
+        public IQuackBehavior QQuackBehavior
+        {
+            set
+            {
+                quackBehavior = value;
+            }
+        }
     }
 }
